@@ -1,5 +1,7 @@
+
 import { useState, FunctionComponent } from 'react';
 import Aside from "./Components/Aside/Aside"
+
 
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -10,6 +12,7 @@ import Content_visitors from './Components/Content/Content-visitors'
 function App() {
 
   return (
+
 
     <main className="flex">
       <aside className="w-1/6 bg-slate-200 h-screen">
@@ -28,6 +31,7 @@ function App() {
       </section>
         </main>
     )
+
 }
 
 export default App
