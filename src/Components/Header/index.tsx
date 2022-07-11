@@ -1,5 +1,6 @@
 function Header(){
     return(
+
       <div className="navbar bg-base-100 shadow-md invisible lg:visible">
       <div className="navbar-start">
           <label tabIndex="0" className="btn btn-ghost btn-circle">
