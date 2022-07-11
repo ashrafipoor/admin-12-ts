@@ -1,4 +1,3 @@
-
 import { useState, FunctionComponent } from 'react';
 import Aside from "./Components/Aside/Aside"
 
@@ -27,6 +26,7 @@ function App() {
           <Content_sales/>
           <Content_visitors/>
            </section>
+
           <Footer/>
       </section>
         </main>
