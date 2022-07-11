@@ -1,45 +1,33 @@
-import { useState } from 'react';
-import logo from './logo.svg'
-import './App.css'
+import { useState, FunctionComponent } from 'react';
+import Aside from "./Components/Aside/Aside"
 
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import Content_dashboard from './Components/Content/Content-Dashboard'
+import Content_more from './Components/Content/Content-more'
+import Content_sales from './Components/Content/Content-sales'
+import Content_visitors from './Components/Content/Content-visitors'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+
+    <main className="flex">
+      <aside className="w-1/6 bg-slate-200 h-screen">
+        <Aside/>
+
+      </aside>
+      <section className="w-5/6 bg-orange-300 h-screen">
+      <Header/>
+      <section className="bg-slate-100 h-screen w-full ">
+          <Content_dashboard/>
+          <Content_more/>
+          <Content_sales/>
+          <Content_visitors/>
+           </section>
+          <Footer/>
+      </section>
+        </main>
+    )
 }
 
 export default App
