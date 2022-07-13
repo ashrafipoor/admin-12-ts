@@ -4,7 +4,7 @@ import Profile from "./Profile";
 
 const Aside = () => {
   return (
-    <div className="bg-gray-700 pl-4 pt-4 pb-4 pr-4">
+    <div className="bg-gray-700 pl-4 pt-4 pb-4 pr-4 h-screen">
       <Logo />
   
       <Profile />

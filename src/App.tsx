@@ -1,4 +1,4 @@
-import { useState, FunctionComponent } from 'react';
+import { useState } from 'react';
 import Aside from "./Components/Aside/Aside"
 
 
@@ -9,28 +9,33 @@ import Content_more from './Components/Content/Content-more'
 import Content_sales from './Components/Content/Content-sales'
 import Content_visitors from './Components/Content/Content-visitors'
 function App() {
-
+  const [showSidebar, setShowSidebar] = useState(false);
+  const onBurgerClick = () => {
+    setShowSidebar(!showSidebar);
+    console.log(showSidebar)
+  }
   return (
 
 
-    <main className="flex">
-      <aside className="w-1/6 bg-slate-200 h-screen">
-        <Aside/>
+    <main className="flex ">
+      <aside className={`top-0 left-0 w-1/6 bg-blue-600 text-white fixed h-full ease-in-out duration-300 ${showSidebar ? "-translate-x-full": "translate-x-0 "
+        }`}>
+        <Aside />
 
       </aside>
-      <section className="w-5/6 bg-orange-300 h-screen">
-      <Header/>
-      <section className="bg-slate-100 h-screen w-full ">
-          <Content_dashboard/>
-          <Content_more/>
-          <Content_sales/>
-          <Content_visitors/>
-           </section>
+      <section className={`flex flex-col ${showSidebar? "w-full":"w-5/6 ml-80"}  bg-slate-100  h-screen overflow-y-auto ease-in-out duration-300`}>
+        <Header onMenuClick={onBurgerClick} />
 
-          <Footer/>
+        <Content_dashboard />
+        <Content_more />
+        <Content_sales />
+        <Content_visitors />
+
+
+        <Footer />
       </section>
-        </main>
-    )
+    </main>
+  )
 
 }
 
