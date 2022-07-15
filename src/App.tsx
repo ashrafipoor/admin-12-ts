@@ -23,13 +23,13 @@ function App() {
         <Aside />
 
       </aside>
-      <section className={`flex flex-col ${showSidebar? "w-full":"w-5/6 ml-80"}  bg-slate-100  h-screen overflow-y-auto ease-in-out duration-300`}>
+      <section className={`flex flex-col w-full  ${showSidebar? "w-full":"w-5/6 ml-56"}  bg-slate-100  h-screen overflow-y-auto ease-in-out duration-300`}>
         <Header onMenuClick={onBurgerClick} />
 
         <Content_dashboard />
         <Content_more />
         <Content_sales />
-        <Content_visitors />
+        <Content_visitors/>
 
 
         <Footer />
