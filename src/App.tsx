@@ -18,12 +18,12 @@ function App() {
 
 
     <main className="flex ">
-      <aside className={`top-0 left-0 w-1/6 bg-blue-600 text-white fixed h-full ease-in-out duration-300 ${showSidebar ? "-translate-x-full": "translate-x-0 "
+      <aside className={`top-0 left-0 w-[15%] bg-blue-600 text-white fixed h-full ease-in-out duration-300 ${showSidebar ? "-translate-x-full": "translate-x-0 "
         }`}>
         <Aside />
 
       </aside>
-      <section className={`flex flex-col ${showSidebar? "w-full":"w-5/6 ml-80"}  bg-slate-100  h-screen overflow-y-auto ease-in-out duration-300`}>
+      <section className={`flex flex-col ${showSidebar? "w-full":"w-[85%] ml-[15%]"}  bg-slate-100  h-screen overflow-y-auto ease-in-out duration-300`}>
         <Header onMenuClick={onBurgerClick} />
 
         <Content_dashboard />
