@@ -1,4 +1,8 @@
+import { useSelector } from "react-redux";
+import type { RootState } from '../../app/store'
+
 const Profile = () => {
+
   return (
     <div className="flex border-b border-gray-500">
       
@@ -7,6 +11,7 @@ const Profile = () => {
         className="flex pl-4 pb-2 pt-2 text-slate-300"
       >
         Administrator
+       
       </a>
     </div>
   );

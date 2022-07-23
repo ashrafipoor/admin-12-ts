@@ -8,7 +8,12 @@ import Content_dashboard from './Components/Content/Content-Dashboard'
 import Content_more from './Components/Content/Content-more'
 import Content_sales from './Components/Content/Content-sales'
 import Content_visitors from './Components/Content/Content-visitors'
+
+import Products from './Components/Products';
+import { useSelector } from 'react-redux';
+import { RootState } from './app/store';
 function App() {
+  const carts = useSelector((state: RootState) => state.cart.value)
   const [showSidebar, setShowSidebar] = useState(false);
   const onBurgerClick = () => {
     setShowSidebar(!showSidebar);
@@ -26,12 +31,12 @@ function App() {
       <section className={`flex flex-col ${showSidebar? "w-full":"w-[85%] ml-[15%]"}  bg-slate-100  h-screen overflow-y-auto ease-in-out duration-300`}>
         <Header onMenuClick={onBurgerClick} />
 
-        <Content_dashboard />
+        {/* <Content_dashboard />
         <Content_more />
         <Content_sales />
-        <Content_visitors />
-
-
+        <Content_visitors /> */}
+        <Products/>
+        {carts.map((item)=><div><h1>{item.productName+' : '+item.productPrice}</h1><br/></div>)}
         <Footer />
       </section>
     </main>
